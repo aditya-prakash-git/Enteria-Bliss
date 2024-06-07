@@ -408,24 +408,42 @@
 
       <section class="section testi" aria-label="testimonials">
         <div class="container">
-
-          <div class="testi-card">
-
+      
+          <div class="testi-card" id="testi1" style="opacity: 1; transition: opacity 1s;">
             <p class="card-text">
               I am delighted to express my utmost satisfaction with Enteria Bliss for their exceptional work on designing my Hyderabad home. Their expertise and attention to detail transformed my living space into a haven of beauty and comfort. From the elegant furniture to the intricate decor, every aspect of their design surpassed my expectations.
             </p>
             <img src="./assets/images/testi1.png" alt="logo" width="100" height="20" class="test-logo">
-
             <p class="client-name">Srived Majumder</p>
-
             <p class="client-title">Client</p>
-
             <img src="./assets/images/quote.svg" width="50" height="50" loading="lazy" class="icon" alt="quote">
-
           </div>
-
+      
+          <div class="testi-card" id="testi2" style="opacity: 0; transition: opacity 1s;">
+            <p class="card-text">
+              Enteria Bliss has exceeded all my expectations with their outstanding design for my New Delhi apartment. Their innovative approach and dedication have turned my vision into reality, making my home a perfect blend of modernity and warmth.
+            </p>
+            <img src="./assets/images/testi2.png" alt="logo" width="100" height="20" class="test-logo">
+            <p class="client-name">Manju Singh</p>
+            <p class="client-title">Client</p>
+            <img src="./assets/images/quote.svg" width="50" height="50" loading="lazy" class="icon" alt="quote">
+          </div>
+      
         </div>
       </section>
+      
+      <script>
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testi-card');
+      
+        setInterval(() => {
+          testimonials[currentTestimonial].style.opacity = 0;
+          currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+          testimonials[currentTestimonial].style.opacity = 1;
+        }, 4000);
+      </script>
+      
+      
 
 
 
